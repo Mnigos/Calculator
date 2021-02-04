@@ -6,13 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <EditText
+        android:id="@+id/editResult"
+        android:layout_width="291dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144" />
+
+    <Button
+        android:id="@+id/btnOne"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="1"
+        android:textSize="30sp"
+        app:backgroundTint="#E53935"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <Button
+        android:id="@+id/btnTwo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="2"
+        android:textSize="30sp"
+        app:backgroundTint="#E53935"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <Button
+        android:id="@+id/btnThree"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="3"
+        android:textSize="30sp"
+        app:backgroundTint="#E53935"
+        tools:layout_editor_absoluteX="270dp"
+        tools:layout_editor_absoluteY="193dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
