@@ -54,4 +54,11 @@ class MainActivity : AppCompatActivity() {
         oldNum = editResult.text.toString()
         isNewOp = true
     }
+
+    private fun equalEvent(view: View) {
+        val editResult: EditText = findViewById(R.id.editResult)
+
+        val number: Int = editResult.text.toString().toInt()
+        editResult.setText(number.toString())
+    }
 }
