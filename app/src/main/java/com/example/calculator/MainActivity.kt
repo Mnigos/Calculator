@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val btnSelected = view as Button
         var btnValue: String = editResult.text.toString()
 
-        when(btnSelected.id) {
+        when (btnSelected.id) {
             R.id.btnZero -> btnValue += "0"
             R.id.btnOne -> btnValue += "0"
             R.id.btnTwo -> btnValue += "0"
