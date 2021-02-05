@@ -61,4 +61,11 @@ class MainActivity : AppCompatActivity() {
         val number: Int = editResult.text.toString().toInt()
         editResult.setText(number.toString())
     }
+
+    private fun cleanEvent(view: View) {
+        val editResult: EditText = findViewById(R.id.editResult)
+
+        editResult.setText("")
+        isNewOp = true
+    }
 }
