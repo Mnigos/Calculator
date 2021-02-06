@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    private fun numbersButtons(view: View) {
+    fun numbersButtons(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
 
-        if (isNewOp) editResult.setText("0")
+        if (isNewOp) editResult.setText("")
 
         val btnSelected: Button = view as Button
         var btnValue: String = editResult.text.toString()
@@ -37,9 +37,11 @@ class MainActivity : AppCompatActivity() {
             R.id.btnEight -> btnValue += "8"
             R.id.btnNine -> btnValue += "9"
         }
+
+        editResult.setText(btnValue)
     }
 
-    private fun operatorsButtons(view: View) {
+    fun operatorsButtons(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
 
         val btnSelected: Button = view as Button
@@ -47,22 +49,32 @@ class MainActivity : AppCompatActivity() {
         when (btnSelected.id) {
             R.id.btnDivision -> op = "/"
             R.id.btnMultiplication -> op = "x"
-            R.id.btnAddition -> op = "-"
-            R.id.btnSubtraction -> op = "+"
+            R.id.btnAddition -> op = "+"
+            R.id.btnSubtraction -> op = "-"
         }
 
         oldNum = editResult.text.toString()
         isNewOp = true
     }
 
-    private fun equalEvent(view: View) {
+    fun equalEvent() {
         val editResult: EditText = findViewById(R.id.editResult)
 
-        val number: Int = editResult.text.toString().toInt()
-        editResult.setText(number.toString())
+        val newNumber: String = editResult.text.toString()
+        var finalNumber: Int = editResult.text.toString().toInt()
+
+        when(op) {
+            "x" -> finalNumber = oldNum.toInt() * newNumber.toInt()
+            "/" -> finalNumber = oldNum.toInt() / newNumber.toInt()
+            "-" -> finalNumber = oldNum.toInt() - newNumber.toInt()
+            "+" -> finalNumber = oldNum.toInt() + newNumber.toInt()
+        }
+
+        editResult.setText(finalNumber.toString())
+        isNewOp = true
     }
 
-    private fun cleanEvent(view: View) {
+    fun clearEvent() {
         val editResult: EditText = findViewById(R.id.editResult)
 
         editResult.setText("")
