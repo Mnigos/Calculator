@@ -6,6 +6,7 @@ import android.text.Editable
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
     var isNewOp: Boolean = true
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             R.id.btnMultiplication -> op = "x"
             R.id.btnAddition -> op = "+"
             R.id.btnSubtraction -> op = "-"
-            R.id.btnSqrt -> finalNumber = Math.sqrt(oldNum.toDouble())
+            R.id.btnSqrt -> finalNumber = sqrt(oldNum.toDouble())
         }
 
         editResult.setText(finalNumber.toString())
