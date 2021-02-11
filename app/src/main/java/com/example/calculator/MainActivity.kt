@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     var isNewOp: Boolean = true
     var op: String = "x"
     var oldNum: String = ""
+    var dot: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,14 +37,17 @@ class MainActivity : AppCompatActivity() {
             R.id.btnSeven -> btnValue += "7"
             R.id.btnEight -> btnValue += "8"
             R.id.btnNine -> btnValue += "9"
+            R.id.btnDot -> {
+                if (!dot) btnValue += "."
+                dot = true
+            }
         }
-
         editResult.setText(btnValue)
     }
 
     fun operatorsButtons(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
-        var finalNumber: Int = editResult.text.toString().toInt()
+        var finalNumber: Double = editResult.text.toString().toDouble()
         oldNum = editResult.text.toString()
 
         val btnSelected: Button = view as Button
@@ -53,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             R.id.btnMultiplication -> op = "x"
             R.id.btnAddition -> op = "+"
             R.id.btnSubtraction -> op = "-"
-            R.id.btnSqrt -> finalNumber = Math.sqrt(oldNum.toDouble()).toInt()
+            R.id.btnSqrt -> finalNumber = Math.sqrt(oldNum.toDouble())
         }
 
         editResult.setText(finalNumber.toString())
@@ -64,13 +68,13 @@ class MainActivity : AppCompatActivity() {
         val editResult: EditText = findViewById(R.id.editResult)
 
         val newNumber: String = editResult.text.toString()
-        var finalNumber: Int = editResult.text.toString().toInt()
+        var finalNumber: Double = editResult.text.toString().toDouble()
 
         when(op) {
-            "x" -> finalNumber = oldNum.toInt() * newNumber.toInt()
-            "/" -> finalNumber = oldNum.toInt() / newNumber.toInt()
-            "-" -> finalNumber = oldNum.toInt() - newNumber.toInt()
-            "+" -> finalNumber = oldNum.toInt() + newNumber.toInt()
+            "x" -> finalNumber = oldNum.toDouble() * newNumber.toDouble()
+            "/" -> finalNumber = oldNum.toDouble() / newNumber.toDouble()
+            "-" -> finalNumber = oldNum.toDouble() - newNumber.toDouble()
+            "+" -> finalNumber = oldNum.toDouble() + newNumber.toDouble()
         }
 
         editResult.setText(finalNumber.toString())
@@ -82,5 +86,6 @@ class MainActivity : AppCompatActivity() {
 
         editResult.setText("")
         isNewOp = true
+        dot=false
     }
 }

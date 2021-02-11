@@ -122,7 +122,7 @@
         app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintVertical_bias="0.773" />
 
     <Button
         android:id="@+id/btnClear"
@@ -143,7 +143,7 @@
         android:id="@+id/btnSqrt"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:onClick="clearEvent"
+        android:onClick="operatorsButtons"
         android:text="√ "
         android:textSize="30sp"
         app:backgroundTint="#E53935"
@@ -260,11 +260,26 @@
         app:layout_constraintVertical_bias="0.52" />
 
     <Button
+        android:id="@+id/btnDot"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:onClick="numbersButtons"
+        android:text=","
+        android:textSize="30sp"
+        app:backgroundTint="#E53935"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774" />
+
+    <Button
         android:id="@+id/btnEqual"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="="
         android:onClick="equalEvent"
+        android:text="="
         android:textSize="30sp"
         app:backgroundTint="#E53935"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -272,6 +287,6 @@
         app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.77" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
