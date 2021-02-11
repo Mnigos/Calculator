@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
 
     fun operatorsButtons(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
+        var finalNumber: Int = editResult.text.toString().toInt()
+        oldNum = editResult.text.toString()
 
         val btnSelected: Button = view as Button
 
@@ -51,9 +53,10 @@ class MainActivity : AppCompatActivity() {
             R.id.btnMultiplication -> op = "x"
             R.id.btnAddition -> op = "+"
             R.id.btnSubtraction -> op = "-"
+            R.id.btnSqrt -> finalNumber = Math.sqrt(oldNum.toDouble()).toInt()
         }
 
-        oldNum = editResult.text.toString()
+        editResult.setText(finalNumber.toString())
         isNewOp = true
     }
 

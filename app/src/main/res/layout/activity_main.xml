@@ -111,18 +111,18 @@
 
     <Button
         android:id="@+id/btnZero"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="0"
+        android:layout_width="151dp"
+        android:layout_height="63dp"
         android:onClick="numbersButtons"
+        android:text="0"
         android:textSize="30sp"
         app:backgroundTint="#E53935"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.757" />
 
     <Button
         android:id="@+id/btnClear"
