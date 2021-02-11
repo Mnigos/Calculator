@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val editResult: EditText = findViewById(R.id.editResult)
 
         if (isNewOp) editResult.setText("")
+        isNewOp = false
 
         val btnSelected: Button = view as Button
         var btnValue: String = editResult.text.toString()
@@ -64,11 +65,11 @@ class MainActivity : AppCompatActivity() {
         isNewOp = true
     }
 
-    fun equalEvent() {
+    fun equalEvent(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
 
         val newNumber: String = editResult.text.toString()
-        var finalNumber: Double = editResult.text.toString().toDouble()
+        var finalNumber: Double ?= null
 
         when(op) {
             "x" -> finalNumber = oldNum.toDouble() * newNumber.toDouble()
@@ -81,11 +82,11 @@ class MainActivity : AppCompatActivity() {
         isNewOp = true
     }
 
-    fun clearEvent() {
+    fun clearEvent(view: View) {
         val editResult: EditText = findViewById(R.id.editResult)
 
         editResult.setText("")
         isNewOp = true
-        dot=false
+        dot = false
     }
 }
